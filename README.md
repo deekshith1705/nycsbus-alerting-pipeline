@@ -46,9 +46,4 @@ cd nycsbus-alerting-pipeline
 terraform init
 terraform apply -var-file="terraform.tfvars"
 
-# Redeploy
-# Redeploy
-# Redeploy
-# Redeploy
-# Redeploy
-# Redeploy
+# Redeploy for uploading the lambda_code to s3 from local
