@@ -4,7 +4,7 @@
 module "lambda" {
   source        = "./modules/lambda"
   function_name = "busEventProcessorv2"
-  s3_bucket     = module.s3.bucket_name
+  s3_bucket     = "nycsbus-breakdowns-12725220"
   s3_key        = "lambda_code.zip"
   handler       = "lambda_function.lambda_handler"
   runtime       = "python3.13"

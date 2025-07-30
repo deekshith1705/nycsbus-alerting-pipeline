@@ -10,3 +10,4 @@ module "cognito" {
   logout_urls     = ["https://d84l1y8p4kdic.cloudfront.net"]
 }
 
+
