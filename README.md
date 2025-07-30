@@ -1,4 +1,4 @@
-# NYCSBUS Alerting Pipeline (Take-Home Project) -
+# NYCSBUS Alerting Pipeline (Take-Home Project) 
 
 This project provisions a serverless alerting pipeline on AWS using Terraform. It ingests bus breakdown events via API Gateway, authenticates users through Cognito, stores events in S3 and DynamoDB, and sends high-priority alerts using SNS and CloudWatch.
 
