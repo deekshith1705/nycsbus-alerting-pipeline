@@ -3,6 +3,6 @@
 # It includes the table name, billing mode, and hash key configuration.
 module "dynamodb" {
   source              = "./modules/dynamodb"
-  dynamodb_table_name = "bus-breakdowns1"
+  dynamodb_table_name = "bus-breakdowns-${random_id.suffix.hex}"
 }
 
