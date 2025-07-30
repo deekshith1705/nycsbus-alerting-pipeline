@@ -4,6 +4,10 @@ output "s3_bucket_name" {
   value = module.s3.bucket_name
 }
 
+output "lambda_bucket_name" {
+  value = module.s3.bucket_name
+}
+
 output "api_invoke_url" {
   value = module.apigateway.invoke_url
 }
