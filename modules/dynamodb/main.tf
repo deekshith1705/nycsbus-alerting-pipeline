@@ -2,7 +2,7 @@
 
 # It includes the table name, billing mode, and hash key configuration.
 resource "aws_dynamodb_table" "this" {
-  name         = var.dynamodb_table_name
+  name         = "bus-breakdowns"
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "Busbreakdown_ID"
 # This resource creates a DynamoDB table with the specified attributes.
@@ -11,3 +11,4 @@ resource "aws_dynamodb_table" "this" {
     type = "N"
   }
 }
+
