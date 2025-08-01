@@ -34,7 +34,7 @@ resource "aws_api_gateway_integration" "integration" {
 
 # This resource grants the API Gateway permission to invoke the specified Lambda function.
 # It allows the API Gateway to call the Lambda function when a request is made to the API Gateway.
-# The source ARN is constructed to match the API Gateway's execution ARN, ensuring that only this
+# The source ARN is constructed to match the API Gateway's execution ARN, ensuring that only requests from this API Gateway can invoke the Lambda function.
 resource "aws_lambda_permission" "apigw" {
   statement_id  = "AllowAPIGatewayInvoke"
   action        = "lambda:InvokeFunction"
@@ -49,8 +49,15 @@ resource "aws_lambda_permission" "apigw" {
 resource "aws_api_gateway_deployment" "deployment" {
   depends_on = [aws_api_gateway_integration.integration]
   rest_api_id = aws_api_gateway_rest_api.this.id
-}
 
+  triggers = {
+    redeployment = sha1(jsonencode({
+      resource_id     = aws_api_gateway_resource.resource.id
+      method_id       = aws_api_gateway_method.method.id
+      integration_id  = aws_api_gateway_integration.integration.id
+    }))
+  }
+}
 # This resource creates a stage for the API Gateway deployment.
 # A stage is a named reference to a deployment, allowing for different versions of the API to be managed.
 # The stage name is set to "prod", indicating that this is the production version of the API.
