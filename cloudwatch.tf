@@ -3,6 +3,6 @@
 # It includes the configuration for CloudWatch alarms and notifications.
 module "cloudwatch" {
   source               = "./modules/cloudwatch"
-  alert_email          = "saideekshithnampally@gmail.com" # ✅ replace with your email
+  alert_email          = "nampalsh@mail.uc.edu" # ✅ replace with your email
   lambda_function_name = module.lambda.lambda_function_name
 }

@@ -14,7 +14,7 @@ module "lambda" {
   environment_variables = {
     S3_BUCKET             = "bus-breakdowns-raw-nycsbus"
     DYNAMO_TABLE          = module.dynamodb.dynamodb_table_name
-    COGNITO_USER_POOL_ID  = "us-east-1_uYCW8zlx2"
-    COGNITO_APP_CLIENT_ID = "33csskgur8qc50u7vaeki2vqv6"
+    #COGNITO_USER_POOL_ID  = "us-east-1_uYCW8zlx2"
+    #COGNITO_APP_CLIENT_ID = "33csskgur8qc50u7vaeki2vqv6"
   }
 }

@@ -58,6 +58,8 @@ resource "aws_api_gateway_deployment" "deployment" {
     }))
   }
 }
+
+
 # This resource creates a stage for the API Gateway deployment.
 # A stage is a named reference to a deployment, allowing for different versions of the API to be managed.
 # The stage name is set to "prod", indicating that this is the production version of the API.
