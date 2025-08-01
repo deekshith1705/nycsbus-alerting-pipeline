@@ -27,7 +27,7 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
       - name: Terraform Format
-        run: terraform fmt -check
+        run: terraform fmt
 
       - name: Terraform Validate
         run: terraform validate
